@@ -1,0 +1,3 @@
+hostname_hostname: "{{ inventory_hostname }}"
+hostname_domains: []
+hostname_aliases: []

@@ -1,0 +1,20 @@
+- name: Converge
+  hosts: all
+  roles:
+    - role: role-hostname
+  vars:
+
+    # inventory/group_vars/all.yml
+    internal_private_domain: cus.int
+    internal_public_domain: cus.pub
+    # inventory/host_vars/myhostname.yml
+    wg_mesh_aliases:
+      - production
+      - prod
+
+    # play
+    hostname_hostname: www
+    hostname_domains:
+      - "{{ internal_private_domain }}"
+      - "{{ internal_public_domain }}"
+    hostname_aliases: "{{ wg_mesh_aliases }}"
